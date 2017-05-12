@@ -1,0 +1,121 @@
+<div>
+
+    <div class="pay-container">
+        <div class="pay-container-main">
+            <div class="pay-container-main-top">
+                <span class="pay-container-main-text01">等待付款</span>
+                <span class="pay-container-main-text02">订单详情></span>
+
+
+                <span class="pay-container-main-top-right">
+                <span>
+                    <span class="pay-container-main-text03">预付定金</span>
+                    <span class="pay-container-main-text04">￥</span>
+                </span>
+
+            <span class="pay-container-main-text05">3000.00</span>
+
+             <span class="pay-container-main-img-span">
+                <img src="images/pay/arrows_up.png" height="30" width="30" class="pay-container-main-ing01"/>
+                <img src="images/pay/arrows_down.png" height="30" width="30" class="pay-container-main-ing02"/>
+             </span>
+
+
+
+           <table class="pay-container-main-table">
+                <tr>
+                    <td>
+                        <input type="radio" name="payment_method" class="pay-container-main-radio01"></td>
+
+                        <td>预付定金</td>
+                    <td class="pay-container-main-price01">￥ <span>3000.00</span></td>
+                </tr>
+               <tr>
+                   <td class=" pay-container-main-table-text" colspan="3">信用卡预授权或其他地方支付押金，将在您还车结算后解冻或退还</td>
+               </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="payment_method" class="pay-container-main-radio02"></td>
+
+                       <td> 全款租金</td>
+                    <td class="pay-container-main-price02">￥ <span>389.00</span></td>
+                </tr>
+                <tr>
+                    <td colspan="3">在线完成支付快速取车</td>
+                </tr>
+            </table>
+
+
+
+            </span>
+                <div class="pay-container-main-top-bottom">
+                    请在1小时内完成支付，否则订单将自动取消
+                </div>
+            </div>
+
+
+            <div class="pay-container-main-middle">
+                <div class="pay-container-main-middle-top">
+                    支付方式
+                </div>
+
+
+
+
+                <div class="pay-container-main-middle-middle">
+
+                    <div id="001" class="pay-container-main-middle-middle-sp01 pay-container-main-middle-middle-chose">
+                        <img src="images/pay/sketch2.png" height="20" width="21" class="pay-container-main-img pay-container-main-img-chose" />
+                    </div>
+
+                    <div id="002" class="pay-container-main-middle-middle-sp02">
+                        <img src="images/pay/sketch2.png" height="20" width="21"  class="pay-container-main-img"/>
+                    </div>
+
+                    <div id="003" class="pay-container-main-middle-middle-sp03">
+                        <img src="images/pay/sketch2.png" height="20" width="21"  class="pay-container-main-img"/>
+                    </div>
+
+                    <div id="004" class="pay-container-main-middle-middle-sp04">
+                        <img src="images/pay/sketch2.png" height="20" width="21"  class="pay-container-main-img"/>
+                    </div>
+
+                </div>
+
+                <div class="pay-middle-div">
+                    <button class="pay-container-main-bottom btn"
+                            data-toggle="modal" data-target="#myModal1">
+                        确认支付
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div>
+                    <h3 class="text-center " style="margin-top: 60px;color: red">恭喜您</h3>
+
+
+                </div>
+
+                <div>
+                    <h4 class="text-center" style="margin-bottom: 50px">已成功预订汽车</h4>
+                </div>
+
+                <div class="modal-footer" style="text-align: center" >
+                    <button class="btn" style="background-color: yellow" ng-click="close001()">
+                        我知道了
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+</div>

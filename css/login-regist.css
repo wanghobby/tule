@@ -1,0 +1,23 @@
+.loginRegi div a{
+   cursor: pointer;
+}
+.nav-myinfo{
+    color: #FABE00;!important;
+    margin-left:3px;
+}
+.personalMenu div ul{
+     background-color: #284664;
+     width: 90px;!important;
+}
+.personalMenu .myTule {
+    cursor: pointer;
+    text-decoration: none;
+}
+.personalMenu .myTule .hello{
+    color:#C8C8CE ;
+}
+
+.personalMenu div ul li a{
+    cursor: pointer;
+    color: #88ACD6
+}

@@ -1,0 +1,133 @@
+<div class="ch1-change-password">
+    <div class="ch1-main-title">
+        我的信息
+
+    </div>
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            昵称
+        </div>
+
+        <input style="padding-left: 10px;" class="ch1-input02" ng-model="nickName" value="小草">
+
+        </input>
+
+
+    </div>
+
+
+    <!--头像  Avatar-->
+
+
+   <!-- <div class="ch1-Avatar">
+
+        <div class="ch1-Avatar-left">
+            头像
+        </div>
+
+
+        <div class="ch1-Avatar-frame" >
+            <div class="ch1-change-content" style="display: inline-block;vertical-align: bottom">
+                <img ngf-src="data.file || data.defaultImage" class="img-responsive" />
+                <div class="button" ngf-select="" ngf-pattern="'image/*'" ngf-multiple="false" ng-model="data.file" style="display:inherit;width: 100%;height: 100%"></div>
+            </div>
+            <button style="display: inline-block;vertical-align: bottom" ng-click="upload()">上传头像</button>
+        </div>
+
+    </div>-->
+
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            姓名
+
+        </div>
+        <div class="ch1-input01" ng-bind="relName.substr(0,1)+'**'"></div>
+        <div class="ch1-main-top-right1">
+            真实姓名，方便租车时核对身份
+        </div>
+
+    </div>
+
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            证件
+
+        </div>
+        <div class="ch1-input01" ng-bind="idCardNum.substr(0,4)+'**'"></div>
+
+
+        <div class="ch1-main-top-right1">
+            如需修改，请致电400-616-6666
+
+
+        </div>
+
+    </div>
+
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            手机号码
+
+        </div>
+
+        <div class="ch1-input01" ng-bind="phoneNum.substr(0,3)+'****'+phoneNum.substr(7,10)"></div>
+
+        <div class="ch1-main-top-right">
+            <span class="ch1-change-phone">修改</span>
+            <span class="ch1-change-phone1">取消修改</span>
+        </div>
+
+    </div>
+
+
+    <div class="ch1-change-ph-content">
+        <div class="ch1-change-ph-content-text">
+            手机号码
+        </div>
+        <div class="ch1-change-ph-content-input">
+            <div>
+                <input type="text" class="ch1-change-ph-content-input1" placeholder="原手机号码">
+
+            </div>
+            <div>
+                <input type="text" class="ch1-change-ph-content-input2" placeholder="新手机号码">
+
+            </div>
+            <div>
+                <input type="text" class="ch1-change-ph-content-input3" placeholder="手机动态码">
+                <div class="ch1-change-ph-content-dynamic">
+                    获取手机动态码
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left" >
+            电子邮箱
+
+        </div>
+
+        <input style="padding-left: 10px;"class="ch1-input02" ng-model="email">
+
+        </input>
+
+
+    </div>
+
+
+    <div class="ch1-div-submit">
+        <div class="ch1-submit" ng-click="upDateInfo()">保存</div>
+
+    </div>
+
+
+</div>

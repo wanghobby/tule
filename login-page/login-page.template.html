@@ -1,0 +1,94 @@
+<div style="">
+<div class="main">
+    <div class="login ">
+        <form id="loginForm" name="loginForm">
+            <div>
+                <div class="top-left" onclick="a()" >登陆</div>
+                <div class="top-right" onclick="b()">手机动态码登陆</div>
+            </div>
+            <div class="user-css">
+                <div class="input-group" style="height: 40px">
+                    <span class="input-group-addon" id="basic-addon1">
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </span>
+                    <input id="demo01" type="text" class="form-control" placeholder="请输入手机号/证件号" ng-model="phone_num"  name="phoneNum"  ng-pattern="/^1[3|4|5|7|8][0-9]{9}$/" required >
+                </div>
+                <div  style="height: 15px;padding-left: 16%;line-height:15px;padding-top: 3px">
+                    <div ng-messages="loginForm.phoneNum.$error" ng-messages-multiple ng-if="loginForm.phoneNum.$touched" >
+                        <div ng-message="required" style="color: #FABE00">手机号不能为空!!!</div>
+                        <div ng-message="pattern" style="color: #FABE00">手机号码不合法!!!</div>
+                    </div>
+                </div>
+                <div class="mima" id="mima001">
+                    <div class="input-group" style="height: 40px">
+                        <span class="input-group-addon" id="basic-addon2">
+                           <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                        </span>
+                        <input id="demo02" type="password" class="form-control" placeholder="请输入密码" ng-model="pass_word" name="password" ng-minlength=6  ng-maxlength=20  ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/"  required>
+                    </div>
+                    <div class="errText" style="height: 20px;padding-left: 16%; line-height:15px; padding-top: 3px">
+                        <div ng-messages="loginForm.password.$error" ng-messages-multiple ng-if="loginForm.phoneNum.$touched" >
+                            <div ng-message="required" style="color: #FABE00">密码不能为空!!!</div>
+                            <div ng-message="minlength" style="color: #FABE00">密码长度最小为6</div>
+                            <div ng-message="maxlength" style="color: #FABE00">密码长度最大为20</div>
+                            <div ng-message="pattern" style="color: #FABE00"> 密码由字母、数字、字符组成</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dongtaima">
+                    <div class="dongtaima-div">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon3">
+                          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                          </span>
+                          <input id="demo03" type="text" class="form-control" placeholder="请输入动态验证码"
+                                   aria-describedby="basic-addon1" required>
+                        </div>
+                    </div>
+                    <div id="number-text">
+                        获取手机动态码
+                    </div>
+                </div>
+                <div class="xzk">
+                    <input type="checkbox" id="autoLogin"> &nbsp;30天内自动登录
+                    <a href="#">忘记密码?</a>
+                </div>
+                <input type="button" value="登陆"   class="button01 " id="btnLoginAjax"  >
+                <div class="text01">还不是会员？ <a href="">立即注册</a></div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="table">
+    <table class="tex-table">
+        <tr>
+            <td class="td01">
+                <img src="images/index-images/banner-bottom-1.png" >
+                <br>
+                <br>
+                100+车型
+            </td>
+            <td class="td02">
+                <img src="images/index-images/banner-bottom-2.png" >
+                <br>
+                <br>
+                1000+网点
+            </td>
+            <td class="td03">
+                <img src="images/index-images/banner-bottom-3.png">
+                <br>
+                <br>
+                100%车险
+            </td>
+            <td class="td04">
+                <img src="images/index-images/banner-bottom-4.png" >
+                <br>
+                <br>
+                无限里程
+            </td>
+        </tr>
+    </table>
+</div>
+</div>

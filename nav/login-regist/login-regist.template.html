@@ -1,0 +1,39 @@
+<div ng-switch on="isLogin" class="loginRegi">
+    <div ng-switch-default>
+          <a  ng-click="abc()">登录 {{userId}}</a></li>
+          <span style="color: orange">/</span>
+          <a ui-sref="regist">注册</a></li>
+    </div>
+
+    <div ng-switch-when="true" class="personalMenu">
+        <div class="dropdown" style="display: inline-block">
+            <a class=" dropdown-toggle  myTule"  id="dropdownMenu1" data-toggle="dropdown" >
+                <img src="http://127.0.0.1:3000/images/userinfo/{{userPhoto001}}" alt="" class="img-circle" style="height: 28px;width: 28px;">
+                <span class="hello" ng-cloak>{{userId.substr(0,5)+'**'}}</span><span class="caret" style="color: white"></span>
+
+              <!--  <span class="hello">你好:{{userId}}</span>
+                我的途乐<span class="caret"></span>-->
+            </a>
+            <ul class="dropdown-menu " style="width: 90px">
+                <li><a ui-sref="userInfoFirst.shortRent">我的订单</a></li>
+                <li><a ui-sref="#">我的资产</a></li>
+                <li><a ui-sref="#">我的账号</a></li>
+                <!--<li role="separator" class="divider"></li>-->
+                <li><a ng-click="logOut()">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div ng-switch-when="false" class="logPre">
+        <a  ng-click="abc()">登录{{userId}}</a></li>
+        <span style="color: orange">/</span>
+        <a ui-sref="regist">注册</a></li>
+    </div>
+</div>
+
+<!--<style>-->
+    <!--div a{-->
+        <!--text-decoration: none;-->
+        <!---->
+    <!--}-->
+<!--</style>-->

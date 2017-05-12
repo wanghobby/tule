@@ -1,0 +1,78 @@
+.in-container{
+    width: 920px;
+    background-color: white;
+    height: 720px;
+    padding: 30px;
+}
+.in-container{
+    font-size: 1.2em;
+    color: #78606C;
+}
+.in-container-number{
+    color: #FF8650;
+    margin-left: 2%;
+}
+
+.in-container-date{
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    background-color: #F8F8FA;
+}
+
+.in-container-date-input{
+    width: 60px;
+    height: 25.5px;
+    border: solid 1px #A9A9A9;
+    text-align: center;
+    line-height: 25.5px;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.8em;
+
+
+}
+.in-container-date-input:hover{
+   background-color: #F3B900;
+
+}
+.in-container-date01{
+    margin-left: 40%;
+}
+.in-container-date02{
+    margin-left: 3%;
+}
+
+.in-container-content{
+    width: 100%;
+    height: 420px;
+    margin-top: 10px;
+    background-color: #F8F8FA;
+    text-align: center;
+}
+
+.in-container-image{
+    margin-top: 65px;
+
+}
+
+.in-container-content-text{
+    height: 80px;
+    line-height: 80px;
+    font-size: 0.9em;
+}
+
+.in-container-content a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    font-size: 0.8em;
+    line-height: 30px;
+    color: white;
+    background-color:#F3B900;
+}
+.in-container-content a:hover{
+  background-color:#FF8650;
+}

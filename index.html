@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="js/angular.js"></script>
+    <script src="js/angular-1.6.3/angular-animate.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/angular-messages/angular-messages.js"></script>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--日历控件-->
+    <script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/shortrent.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/rent-index.css">
+    <link rel="stylesheet" href="css/login-css.css">
+    <link rel="stylesheet" href="css/login-regist.css">
+    <link rel="stylesheet" href="css/registration-css.css">
+    <link rel="stylesheet" href="css/integral.css">
+    <link rel="stylesheet" href="css/changePassword.css">
+    <link rel="stylesheet" href="css/userInfor.css">
+    <link rel="stylesheet" href="css/memberRules.css">
+    <link rel="stylesheet" href="css/membershipLevel.css">
+    <link rel="stylesheet" href="css/shortDrive.css">
+    <link rel="stylesheet" href="css/myCollection.css">
+    <link rel="stylesheet" href="css/myComment.css">
+    <link rel="stylesheet" href="css/personal-comment.css">
+    <link rel="stylesheet" href="css/empty-short-drive.css">
+    <link rel="stylesheet" href="css/userInfor.css">
+    <link rel="stylesheet" href="css/Pay.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/order01.css">
+    <link rel="stylesheet" href="css/userinforTotal.css">
+
+    <!--<script src="js/showtel.js"></script>-->
+    <script src="js/rent-index.js"></script>
+    <script src="js/login-js.js"></script>
+
+
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+
+<!--导入service 服务-->
+    <script src="service/service.module.js"></script>
+    <script src="service/public/public.module.js"></script>
+
+    <script src="service/login/login.module.js"></script>
+    <script src="service/login/login.service.js"></script>
+
+    <script src="service/personal/personal.module.js"></script>
+    <script src="service/personal/personal.service.js"></script>
+<!--导航js-->
+    <script src="nav/nav.module.js"></script>
+    <script src="nav/nav.directive.js"></script>
+<!--首页-->
+    <script src="template/template.module.js"></script>
+    <script src="template/template.directive.js"></script>
+  <!--登陆注册  -->
+    <script src="nav/login-regist/login-regist.module.js"></script>
+    <script src="nav/login-regist/login-regist.directive.js"></script>
+    <!--登陆-->
+    <script src="login-page/login-page.module.js"></script>
+    <script src="login-page/login-page.directive.js"></script>
+    <!--注册-->
+    <script src="regist-page/regist-page.module.js"></script>
+    <script src="regist-page/regist-page.directive.js"></script>
+
+
+    <!--短租-->
+    <script src="shortrent/shortrent.module.js"></script>
+    <script src="shortrent/shortrent.directive.js"></script>
+
+    <!--支付-->
+    <script src="pay/pay.module.js"></script>
+    <script src="pay/pay.directive.js"></script>
+<!--订单-->
+    <script src="order/order.module.js"></script>
+    <script src="order/order.directive.js"></script>
+<!--上传控件-->
+    <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+    <script src="bower_components/ng-img-crop/compile/minified/ng-img-crop.js"></script>
+    <!--<link rel="stylesheet" href="bower_components/ng-img-crop/compile/minified/ng-img-crop.css">-->
+
+    <script src="userInfo/userinfo.module.js"></script>
+    <script src="userInfo/userinfo.directive.js"></script>
+    <script src="userInfo/userinfo.config.js"></script>
+
+    <script src="userInfo/myshortrent/myshortrent.module.js"></script>
+    <script src="userInfo/myshortrent/myshortrent.directive.js"></script>
+
+    <script src="userInfo/integral/integral.module.js"></script>
+    <script src="userInfo/integral/integral.directive.js"></script>
+
+    <script src="userInfo/changePassword/changePassword.module.js"></script>
+    <script src="userInfo/changePassword/changePassword.directive.js"></script>
+
+    <script src="userInfo/myInfo/myInfo.module.js"></script>
+    <script src="userInfo/myInfo/myInfo.directive.js"></script>
+
+    <script src="userInfo/memberRules/memberRules.module.js"></script>
+    <script src="userInfo/memberRules/memberRules.directive.js"></script>
+
+    <script src="userInfo/membership level/membership level.module.js"></script>
+    <script src="userInfo/membership level/membership level.directive.js"></script>
+
+    <script src="userInfo/myCollect/myCollect.module.js"></script>
+    <script src="userInfo/myCollect/myCollect.directive.js"></script>
+
+    <script src="userInfo/myComment/myComment.module.js"></script>
+    <script src="userInfo/myComment/myComment.directive.js"></script>
+
+    <script src="userInfo/orderDetail/orderDetail.module.js"></script>
+    <script src="userInfo/orderDetail/orderDetail.directive.js"></script>
+
+    <script src="userInfo/writeInfo/writeInfo.module.js"></script>
+    <script src="userInfo/writeInfo/writeInfo.directive.js"></script>
+
+    <script src="userInfo/writeUserInfo/writeUserInfo.module.js"></script>
+    <script src="userInfo/writeUserInfo/writeUserInfo.directive.js"></script>
+
+    <script src="all-car/all-car.module.js"></script>
+    <script src="all-car/all-car.directive.js"></script>
+
+    <script src="userInfo/myComment/repeatFinish/repeatFinish.module.js"></script>
+    <script src="userInfo/myComment/repeatFinish/repeatFinish.directive.js"></script>
+
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+
+    <title>tule</title>
+</head>
+<body ng-app="tule">
+<div>
+   <nav-page></nav-page>
+</div>
+<div class="row">
+    <section class="col-md-12 col-lg-12 viewCss" ui-view>
+
+    </section>
+</div>
+<div class="footer">
+    <div class="row ">
+        <div class="col-xs-2 col-sm-1 col-md-1 col-lg-2"></div>
+        <div class="col-xs-10 col-sm-11 col-md-11 col-lg-10 footer-nav">
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1"><a href="">关于我们</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">投资关系</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">新闻中心</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">加盟合作</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">隐私保护</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">网站导航</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">隐私保护</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">联系我们</a></div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-1 "><a href="">招贤纳士</a></div>
+        </div>
+    </div>
+    <div class="footer-copyRight">
+        <div class="row">
+            <div class="col-xs-0 col-sm-2 col-md-3 col-lg-3"></div>
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+                Copyright©2008-2017 www.zuche.com All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbs途乐租车官网版权所有
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

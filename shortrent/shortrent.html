@@ -1,0 +1,269 @@
+<div class="shortrent-body-container ">
+    <div class="row shortrent-select-container shortrent-part">
+        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <p>取车地点</p>
+                    <select name="city" id="city" class="shortrent-select1 " ng-init="cityName = '上海'"
+                            ng-model="cityName">
+                        <option ng-value="a.city" ng-repeat="a in rentCarCity" ng-bind="a.city"></option>
+                    </select>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <p>还车地点</p>
+                    <select name="returnCity" id="returnCity" class="shortrent-select1 " ng-init="cityName01 = '上海'"
+                            ng-model="cityName01">
+                        <option ng-value="c.city" ng-repeat="c in returnCarCity" ng-bind="c.city"></option>
+                    </select>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <p>取车时间</p>
+                    <input ng-model="rentDate" id="d4311" class="Wdate shortrent-select1" type="text"
+                           onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4312\')||\'2020-10-01\'}',isShowClear:false,readOnly:true,minDate:'%y-%M-{%d}', dateFmt:'yyyy-MM-dd HH:00',skin:'twoer',})"/>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <p>还车时间</p>
+                    <input ng-model="backDate" id="d4312" class="Wdate shortrent-select1" type="text"
+                           onFocus="WdatePicker({minDate:'#F{$dp.$D(\'d4311\')}',maxDate:'2020-10-01',isShowClear:false,readOnly:true, dateFmt:'yyyy-MM-dd HH:00',skin:'twoer',})"/>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="border: solid 1px red;margin-left: 0">-->
+        <a id="search" class="shortrent-button">搜索</a>
+        <!--</div>-->
+    </div>
+
+
+    <div class="shortrent-storm shortrent-part">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row shortrent-getstorm">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                        <B>取车位置</B>
+                    </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-11 shortrent-border">
+                        <div class="row " id="shortRentShowGetCarStorm">
+                        <span class="shortrent-getstorm-map  watch-{{$first}}" ng-repeat=" v in rentStorm"
+                              ng-bind="v.store" id="rent{{v.cId}}{{v.id}}"></span>
+                            <a  data-toggle="modal" ng-click="initMap()"><span class="glyphicon glyphicon-map-marker shortrent-showmap">在地图上查找</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row shortrent-backstorm">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                        <b>还车位置</b>
+                    </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-11">
+                        <div class="row" id="shortRentShowStorm">
+                            <span class="shortrent-backstorm-get">与取车位置相同</span>
+                            <span class="shortrent-backstorm-other" id="shortRentShowOtherStorm">还到其他门店</span>
+                        </div>
+                        <div class="row shortrent-backstorm-none" id="shortRentShowRelStorm">
+                        <span class=" shortrent-getstorm-map watch-{{$first}}" ng-repeat="value in returnStorm"
+                              ng-bind="value.store" id="return{{value.cId}}{{value.id}}"></span>
+                            <a data-toggle="modal" ng-click="initMap()"><span class="glyphicon glyphicon-map-marker shortrent-showmap">在地图上查找</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--地图模态框（Modal） -->
+    <div class="modal fade" id="myModal"  aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px;top: 100px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        查找门店地图
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <div style="width:100%;height:250px;border:#ccc solid 1px;" id="dituContent"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+    <!--筛选条件模块-->
+    <div class=" shortrent-type-container shortrent-part">
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="line-height: 100px">
+                <b>车型</b>
+            </div>
+            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                <div class="row">
+                    <ul id="searchByType">
+                        <li id="type0" class="shortrent-search-type-true">
+                            <h5>不限车型</h5>
+                            <img src="images/shortRent/everyType.jpg" height="49" width="92"/>
+                            <p style="font-size: 11px">所有车型</p>
+                            <img id="img0" src="images/shortRent/true.png" class="shortrent-search-type-true-img"/>
+                        </li>
+                        <li id="type{{ty.id}}" class="shortrent-search-type-false" ng-repeat="ty in CarType ">
+                            <h5 ng-bind="ty.type"></h5>
+                            <img ng-src="http://127.0.0.1:3000/images/shortRent/{{ty.typeIcon}}" height="49"
+                                 width="92"/>
+                            <p style="font-size: 11px" ng-bind="ty.tBrief"></p>
+                            <img id="img{{ty.id}}" src="images/shortRent/true.png"
+                                 class="shortrent-search-type-false-img"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="border-bottom: solid 1px #E1E1E1;padding-top: 10px">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="height:40px;line-height: 24px">
+                <b>价格</b>
+            </div>
+            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                <div class="row">
+                    <ul id="searchByPrice">
+                        <li id="carprice0" class="shortrent-search-pb-true">不限</li>
+                        <li id="carprice1" class="shortrent-search-price-false">
+                            <img src="images/shortRent/select.png" height="18" width="18"/>
+                            <span>0-150</span>
+                        </li>
+                        <li id="carprice2" class="shortrent-search-price-false">
+                            <img src="images/shortRent/select.png" height="18" width="18"/>
+                            <span> 150-250</span>
+                        </li>
+                        <li id="carprice3" class="shortrent-search-price-false">
+                            <img src="images/shortRent/select.png" height="18" width="18"/>
+                            <span>250-500</span>
+                        </li>
+                        <li id="carprice4" class="shortrent-search-price-false">
+                            <img src="images/shortRent/select.png" height="18" width="18"/>
+                            <span>500以上</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="border-bottom: solid 1px #E1E1E1;padding-top: 10px">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="height:40px;line-height:24px">
+                <b>品牌</b>
+            </div>
+            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                <div class="row">
+                    <ul id="searchByBrand">
+                        <li id="brand0" class="shortrent-search-pb-true">不限</li>
+                        <li id="brand{{br.bId}}" ng-repeat="br in Brand" class="shortrent-search-brand-false">
+                            <img src="images/shortRent/select.png" height="18" width="18"/>
+                            <span ng-bind="br.brand" style="font-weight: 400;"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--展示车辆模块-->
+
+    <div style="padding-left: 0px;" class="shortrent-part">
+        <div class="row"
+             style="background-color: white;border-top: solid 1px #5390ED;padding-top: 10px;padding-bottom: 10px;">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><h4>共有{{carle}}款车型</h4></div>
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                <div style="text-align: right">
+                    <button id="normal" type="button" class="btn btn-default shortrent-botton-color "
+                            style="background-color: #5390ED;color: white" aria-haspopup="true" aria-expanded="false">
+                        综合
+                    </button>
+                    <button id="pricedown" type="button" class="btn btn-default shortrent-botton-color"
+                            aria-haspopup="true" aria-expanded="false">
+                        价格由高到低
+                        <span class="caret"></span>
+                    </button>
+                    <button id="priceup" type="button" class="btn btn-default shortrent-botton-color"
+                            aria-haspopup="true" aria-expanded="false">
+                        价格由低到高
+                        <span class="caret"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!--更改样式开始-->
+
+        <div class="row show-shortCar" id="stateGo" >
+            <!--<div class="col-lg-12"style="background-color: white;margin-top: 10px"  >-->
+
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 " ng-repeat="car in newcarinfo">
+                <a id="goDetailed{{car.eachCarId}}" class="shortEveryCar" ng-mouseover="showShortText(car.eachCarId)" ng-mouseleave="hideShortText(car.eachCarId)">
+                    <div class="shortEveryCar-div " >
+                        <img ng-src="http://127.0.0.1:3000/images/shortRent/{{car.carPhoto}}" alt="... " style="width: 100%">
+                        <div class="shortEveryCar-name">
+                            <span ng-cloak>{{car.carName}}</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <span2 ng-cloak><img src="images/shortRent/quickD.png" alt="" >{{'￥'+car.rentPrice}}</span2>
+                        </div>
+                        <div class="shortEveryCar-text-shadow" id="{{car.eachCarId}}">
+                            <div class="shortEveryCar-text" id="{{car.eachCarId}}1">
+
+                                <div class="shortEveryCar-confi">
+                                    <span1 ng-cloak>{{'保险&nbsp;'+car.insurance}}</span1>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span ng-cloak>{{'预授权&nbsp;'+car.yajin}}</span>
+                                    <br>
+                                    <span2 >{{'乘坐&nbsp;'+car.sitNum+'人'}}</span2>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span ng-clock>{{car.carSize}}{{car.output}}</span><br>
+                                    <span ng-clock>{{'驾驭时尚&nbsp;'+car.tBrief}}</span>
+                                    <span3>查看详情</span3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div ng-if="carle==0" class="shortCarIsNo">
+        <img src="images/shortRent/cryFace.png" alt="">
+        很抱歉没有查到合适的车！</div>
+    <div aria-label="Page navigation" style="text-align:center; margin-top: 30px">
+        <ul class="pagination">
+            <li>
+                <a href="javascript:void(0);" aria-label="Previous" id="backPage"
+                   ng-click="turnPage(page_now-1)">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <li ng-repeat="c in part_count" id="{{c}}">
+                <a href="javascript:void(0);" ng-bind="c" ng-click="turnPage(c)"></a>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" aria-label="Next" id="goPage" ng-click="turnPage(page_now+1)">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="gotop"
+         style="height:54px ;width:54px; border-radius: 5px;  background-color: grey;  position: fixed;  bottom: 160px;right: 0px;  display: none;  color: white;  font-size: 1em;  ">
+        <img src="images/shortRent/gobacktop.png" height="54" width="54"/>
+    </div>
+
+
+</div>

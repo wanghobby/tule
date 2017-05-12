@@ -1,0 +1,17 @@
+{
+  "id": "001",
+  "part": [
+    {
+      "seatNumber": 4,
+      "doorNumber": 4,
+      "fuelType": "石油",
+      "gearBox": "AT"
+    },
+    {
+      "brand": "Jeep",
+      "series": "指南者",
+      "age": 2015,
+      "conf": "品优款"
+    }
+  ]
+}

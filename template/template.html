@@ -1,0 +1,446 @@
+
+<div>
+<div class=" banner">
+    <div id="myCarousel" class="carousel slide  ">
+        <div id="divImage">
+        </div>
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" id="img01" class="active" ng-click="changeImage(1,1)"></li>
+            <li data-target="#myCarousel" id="img02" ng-click="changeImage(2,1)"></li>
+            <li data-target="#myCarousel" id="img03" ng-click="changeImage(3,1)"></li>
+            <li data-target="#myCarousel" id="img04" ng-click="changeImage(4,1)"></li>
+            <!--<li data-target="#myCarousel" id="img05" ng-click="changeImage(5,1)"></li>-->
+        </ol>
+    </div>
+    <div class="rent-form" >
+        <div class="rent-form-top">
+            <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+            <table class="rent-form-top-nav">
+                <tr>
+                    <td onclick="show(1)"><a>到店取还 <span>(24小时放肆租)</span></a></td>
+                    <td onclick="show(2)"><a>特价套餐<span>(低至6折)</span></a></td>
+                </tr>
+            </table>
+            <!--</div>-->
+        </div>
+        <div class="row rent-form-content">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <table class="rent-form-content-table">
+                    <tr>
+                        <td style="">取车地点</td>
+                        <td style="">还车地点</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="left-input-table" >
+
+                                <tr><td>
+                                    <!--<input type="text" placeholder=" 武汉">-->
+                                    <select name="city"  class="indexTime-select1 " ng-init="rentCityName = '上海'" ng-model="rentCityName">
+                                        <option ng-value="a.city" ng-repeat="a in rentCarCity" ng-bind="a.city"></option>
+                                    </select>
+                                </td></tr>
+                                <tr><td>
+                                    <select name="store"  class="indexTime-select1 " id="rentStoreName"  ng-click="getRentS()">
+                                        <option ng-value="c.store" ng-repeat="c in rentStore" ng-bind="c.store"></option>
+                                    </select>
+                                </td></tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="left-input-table">
+                                <tr><td>
+                                    <select name="city"  class="indexTime-select1 " ng-init="returnCityName = '上海'" ng-model="returnCityName">
+                                        <option ng-value="b.city" ng-repeat="b in returnCarCity" ng-bind="b.city"></option>
+                                    </select>
+                                </td></tr>
+                                <tr><td>
+                                    <select name="store"  class="indexTime-select1 " id="returnStoreName"  ng-click="getRetuS()">
+                                        <option ng-value="d.store" ng-repeat="d in returnStore" ng-bind="d.store"></option>
+                                    </select>
+                                </td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="left-input-table">
+                                <tr><td><input   id="d4315" ng-model="indexRentDate" class="Wdate indexTime-select1" type="text" onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4316\')||\'2020-10-01\'}',isShowClear:false,readOnly:true,minDate:'%y-%M-{%d}', dateFmt:'yyyy-MM-dd HH:00',skin:'twoer',})" ></td></tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="left-input-table" >
+                                <tr><td><input  id="d4316" ng-model="indexBackDate" class="Wdate indexTime-select1" type="text" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'d4315\')}',maxDate:'2020-10-01',isShowClear:false,readOnly:true, dateFmt:'yyyy-MM-dd HH:00',skin:'twoer',})" >
+                                </td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--ui-sref="shortrent({rentCity:rentCityName,rentStore:rentStoreName,returnCity:returnCityName,returnStore:returnStoreName,rentTime:indexRentDate,returnTime:indexBackDate})"-->
+                        <td colspan="2"><input type="button" ng-click="indexRentBtn()"   value="立即租车"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="rent-taocan-content">
+            <div class="rent-taocan">
+                <div class="taocan1" onmouseover="tcChangeColor(0)" onmouseout="tcAgainColor(0)">
+                    <div class="text">工作日套餐 <br><span>(4天)</span> </div>
+                    <div class="circle">
+                        <div class="circle-text">超值优惠</div>
+                    </div>
+                </div>
+                <div class="taocan1" onmouseover="tcChangeColor(1)" onmouseout="tcAgainColor(1)">
+                    <div class="text">周租套餐 <br><span>(7-27天)</span></div>
+                    <div class="circle">
+                        <div class="circle-text">超值优惠</div>
+                    </div>
+                </div>
+                <div class="taocan1" onmouseover="tcChangeColor(2)" onmouseout="tcAgainColor(2)">
+                    <div class="text">月租套餐 <br> <span>(28+天)</span></div>
+                    <div class="circle">
+                        <div class="circle-text">超值优惠</div>
+                    </div>
+                </div>
+                <div class="taocan1" onmouseover="tcChangeColor(3)" onmouseout="tcAgainColor(3)">
+                    <div class="text">年租套餐 <br><span>(360-364天)</span></div>
+                    <div class="circle">
+                        <div class="circle-text">用车体验</div>
+                    </div>
+                </div>
+                <div class="taocna-bottom">
+                    <img src="images/index-images/gantanhao.png" alt="">
+                    <span> 周租/月租套餐附加增值服务，GPS导航仪/不计免赔服务/儿童座椅，7天价格封顶。</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container" style="width: 100%;">
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1 " ></div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 banner-bottom">
+                    <div class="banner-bottom-step1-top">
+                        <img src="images/index-images/banner-bottom-1.png" alt="">
+                    </div>
+                    <p>100+车型</p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 banner-bottom">
+                    <div class="banner-bottom-step1-top">
+                        <img src="images/index-images/banner-bottom-2.png" alt="">
+                    </div>
+                    <p>1000+网点</p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 banner-bottom">
+                    <div class="banner-bottom-step1-top">
+                        <img src="images/index-images/banner-bottom-3.png" alt="">
+                    </div>
+                    <p>100%车险</p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 banner-bottom" style="border-right:  solid 1px #F2F3F5">
+                    <div class="banner-bottom-step1-top">
+                        <img src="images/index-images/banner-bottom-4.png" alt="">
+                    </div>
+                    <p>无限里程</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!--third-->
+    <div class="container index-third-content" >
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 third-title">
+                <h3>途乐租车给你不一样的感受</h3>
+                <p>全面解决海外自驾游的驾照、语言、手续、交规、保险等问题，给你更便捷舒心的租车体验。</p>
+            </div>
+        </div>
+        <div class="row third-step-content">
+            <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1">
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" style="">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3" style="height: 300px">
+                        <div class="third-step1" onmouseover="showTextOne(0)" onmouseout="showTextAnother(0)">
+                            <div class="third-step1-top">
+                                <img src="images/index-images/step-1.png" alt="">
+                            </div>
+                            <div class="third-step1-content">
+                                <p>中国驾照</p>
+                                <p>直接租</p>
+                            </div>
+                            <div class="third-step1-content-hide">
+                                <p>手机拍照上传</p>
+                                <p>即可完成驾照认证</p>
+                                <p> 取车时只需带上驾照原件</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3" style="height:300px">
+                        <div class="third-step1" onmouseover="showTextOne(1)" onmouseout="showTextAnother(1)">
+                            <div class="third-step1-top">
+                                <img src="images/index-images/step-2.png" alt="">
+                            </div>
+                            <div class="third-step1-content">
+                                <p>一对一</p>
+                                <p>中文服务</p>
+                            </div>
+                            <div class="third-step1-content-hide">
+                                <p>专人送车接车</p>
+                                <p>提前机场等候</p>
+                                <p>应急联系，全程中文服务</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3" style="height: 300px">
+                        <div class="third-step1" onmouseover="showTextOne(2)" onmouseout="showTextAnother(2)">
+                            <div class="third-step1-top">
+                                <img src="images/index-images/step-3.png" alt="">
+                            </div>
+                            <div class="third-step1-content">
+                                <p>当地</p>
+                                <p>驾驶指导</p>
+                            </div>
+                            <div class="third-step1-content-hide">
+                                <p>专业司机陪伴</p>
+                                <p>5-10分钟驾驶路程</p>
+                                <p>指导当地交规、路况等</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3" style="height: 300px">
+                        <div class="third-step1" onmouseover="showTextOne(3)" onmouseout="showTextAnother(3)">
+                            <div class="third-step1-top">
+                                <img src="images/index-images/step-4.png" alt="">
+
+                            </div>
+                            <div class="third-step1-content">
+                                <p>全程保险</p>
+                                <p>保车保人</p>
+                            </div>
+                            <div class="third-step1-content-hide">
+                                <p>租车即送无忧全险</p>
+                                <p>车损无需垫付，另含</p>
+                                <p>人身财物险、道路救援保障</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--fourth showCar-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fourth-title">
+            <h3>优惠车型大搜罗</h3>
+            <p>舒适租车，从这里开始</p>
+        </div>
+    </div>
+    <div class="container show-car-content" style="margin: auto;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                <a ui-sref="shortrent">
+                    <div class="show-car1" onmouseover="changeCarText(0)" onmouseout="againCarText(0)">
+                        <div class="car-shadow">
+                            <div class="car-text ">
+                                <p ng-cloak>{{indexShowCar[0].brand}}&nbsp;{{indexShowCar[0].series}}</p>
+                                <div class="car-text-detail">
+                            <span>三个月租金<br>
+                                <b ng-bind="indexShowCar[0].rentPrice*40*0.3+'元/月'"></b>
+                            </span>
+                                    <span>半年租金<br>
+                                <b>2400元/月</b></span>
+                                    <span>一年租金<br>
+                                <b>4000元/月</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
+                <a ui-sref="shortrent">
+                    <div class="show-car2"  onmouseover="changeCarText(1)" onmouseout="againCarText(1  )">
+                        <div class="car-shadow">
+                            <div class="car-text ">
+                                <p ng-cloak>{{indexShowCar[1].brand}}&nbsp;{{indexShowCar[1].series}}</p>
+                                <div class="car-text-detail">
+                            <span>三个月租金<br>
+                                <b ng-bind="indexShowCar[1].rentPrice*40*0.3+'元/月'"></b>
+                            </span>
+                                    <span>半年租金<br>
+                                <b>2400元/月</b></span>
+                                    <span>一年租金<br>
+                                <b>2400元/月</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
+                <a ui-sref="shortrent">
+                    <div class="show-car3" onmouseover="changeCarText(2)" onmouseout="againCarText(2)">
+                        <div class="car-shadow">
+                            <div class="car-text ">
+                                <p ng-cloak>{{indexShowCar[2].brand}}&nbsp;{{indexShowCar[2].series}}</p>
+                                <div class="car-text-detail">
+                            <span>三个月租金<br>
+                                <b ng-bind="indexShowCar[2].rentPrice*40*0.3+'元/月'"></b>
+                            </span>
+                                    <span>半年租金<br>
+                                <b>2400元/月</b></span>
+                                    <span>一年租金<br>
+                                <b>2400元/月</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 1%;">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
+                <a ui-sref="shortrent">
+                    <div class="show-car4" onmouseover="changeCarText(3)" onmouseout="againCarText(3)">
+                        <div class="car-shadow">
+                            <div class="car-text ">
+                                <p ng-cloak>{{indexShowCar[3].brand}}&nbsp;{{indexShowCar[3].series}}</p>
+                                <div class="car-text-detail">
+                            <span>三个月租金<br>
+                                <b ng-bind="indexShowCar[3].rentPrice*40*0.3+'元/月'"></b>
+                             </span>
+                                    <span>半年租金<br>
+                                <b>2400元/月</b></span>
+                                    <span>一年租金<br>
+                                <b>2400元/月</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <a ui-sref="shortrent">
+                    <div class="show-car5" onmouseover="changeCarText(4)" onmouseout="againCarText(4)">
+                        <div class="car-shadow">
+                            <div class="car-text ">
+                                <p ng-cloak>{{indexShowCar[4].brand}}&nbsp;{{indexShowCar[4].series}}</p>
+                                <div class="car-text-detail">
+                            <span>三个月租金<br>
+                                <b ng-bind="indexShowCar[4].rentPrice*40*0.3+'元/月'"></b>
+                            </span>
+                                    <span>半年租金<br>
+                                <b>2400元/月</b></span>
+                                    <span>一年租金<br>
+                                <b>2400元/月</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <a ui-sref="shortrent">
+                    <div class="show-car6" onmouseover="changeCarText(5)" onmouseout="againCarText(5)">
+                        <div class="car-shadow">
+                            <div class="car-text ">
+                                <p ng-cloak>{{indexShowCar[5].brand}}&nbsp;{{indexShowCar[5].series}}</p>
+                                <div class="car-text-detail">
+                            <span>三个月租金<br>
+                                <b ng-bind="indexShowCar[5].rentPrice*40*0.3+'元/月'"></b>
+                            </span>
+                                    <span>半年租金<br>
+                                <b>2400元/月</b></span>
+                                    <span>一年租金<br>
+                                <b>4000元/月</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-5"></div>
+            <div class="col-xs-5 col-sm-4 col-md-2 col-lg-2 clickCar">
+                <a ui-sref="shortrent">立即选车</a>
+            </div>
+        </div>
+    </div>
+    <!--fourth showCar 结束-->
+
+    <!-- fivth 租车说明开始 -->
+    <div class="container" style="width: 100%">
+        <div class="row" style="margin-top: 4%">
+            <hr>
+        </div>
+    </div>
+
+    <div class="fivth" >
+        <div class="row" style="margin: auto;background-color: #F2F2F2">
+            <div class="col-xs-0 col-sm-0 col-md-2 col-lg-1"></div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" style="padding: 1% 0 2% 0;min-width: 460px">
+                <div class="fivth-one">
+                    <div class="title"><a href="https://www.zuche.com">租车</a>预订说明</div>
+                    <div class="detail">
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz1">服务时间</a>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz03">待租车况</a> <br>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz05">服务预订</a>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz02">短租产品</a> <br>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz04">租车资格</a>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz06">取还车说明</a>
+                    </div>
+                </div>
+                <div class="fivth-after-two">
+                    <div class="title">会员管理</div>
+                    <div class="detail">
+                        <a target="_blank" href="https://mycar.zuche.com/member/person/personinfo/memberNotify.do">会员章程</a>
+                        <br>
+                        <a target="_blank" href="https://mycar.zuche.com/member/person/personinfo/memberRule.do">会员细则</a><br>
+                        <a target="_blank" href="https://mycar.zuche.com/member/getMemberLevel.do">定级积分</a>
+                    </div>
+                </div>
+                <div class="fivth-after-three">
+                    <div class="title">紧急事务处理</div>
+                    <div class="detail">
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz07">保险责任</a>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz08">理赔说明</a><br>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz09">事故处理</a><br>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz10" style="clear:both;">救援及备用车</a>
+                    </div>
+                </div>
+                <div class="fivth-after-four">
+                    <div class="title"><a href="https://www.zuche.com">租车</a>费用及结算</div>
+                    <div class="detail">
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz11">价格说明</a>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz13">结算流程</a><br>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz14">储值卡</a>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp#fwgz15">积分</a>
+                    </div>
+                </div>
+                <div class="fivth-after-five">
+                    <div class="title">帮助中心</div>
+                    <div class="detail">
+                        <a target="_blank" href="https://help.zuche.com/cjwt/">常见问题</a><br>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/xssl.jsp">新手上路</a><br>
+                        <a target="_blank" href="https://help.zuche.com/jsp/newhelp/fwgz.jsp">服务规则 </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

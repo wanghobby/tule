@@ -1,0 +1,333 @@
+<div style="background-color: #F2F3F5">
+    <div class="container" >
+        <div class="row"style="text-align: center;margin-top: 40px;margin-bottom: 20px">
+            <img src="images/order_proce.png" width="100%" >
+        </div>
+        <div class="row" style="background-color: white;padding-top: 20px;padding-bottom: 20px">
+            <div class="col-lg-3">
+                <img src="http://127.0.0.1:3000/images/shortRent/{{newDate.carPhoto}}"  width="200"/></div>
+            <div class="col-lg-3" style="border-right: solid 1px gainsboro">
+                <h4 ng-bind="newDate.carName"></h4>
+                <span  ng-bind="newDate.carSize" style="color: #939DB3 ;font-size: 11px" >三厢</span>
+                <span style="color: #939DB3;font-size: 11px" > / </span>
+                <span  ng-bind="newDate.output" style="color: #939DB3;font-size: 11px" >1.6T自动</span>
+                <span style="color: #939DB3;font-size: 11px"> | </span>
+                <span  ng-bind="'乘坐'+newDate.sitNum+'人'" style="color: #939DB3;font-size: 11px" >乘坐5人</span>
+               <div style="margin-top: 20px">
+                   <a  style="display: inline-block;width: 120px;height: 30px;border-radius: 3px;background-color: #5390ED;color: white;text-align: center;line-height: 30px;text-decoration: none" data-toggle="modal" data-target="#myModal">查看配置信息</a>
+                   <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">-->
+                   <a ui-sref="shortrent" style="display: inline-block;width: 80px;height: 30px;border-radius: 3px;border: solid 1px gainsboro;color:#939DB3 ;text-align: center;line-height: 30px;text-decoration: none">修改订单</a>
+               </div>
+            </div>
+            <div class="col-lg-3"  style="border-right: dotted 1px gainsboro">
+                <h4><img src="images/order/getCar.png" height="16" width="16"/> 取车</h4>
+                <p><img src="images/order/time.png" height="14" width="14"/> {{data.rentDate}}</p>
+                <p><img src="images/order/address.png" height="14" width="14"/> {{data.getCity}} {{data.nowStore}}</p>
+            </div>
+            <div class="col-lg-3">
+                <h4><img src="images/order/returnCar.png" height="16" width="16"/>   还车</h4>
+                <p> <img src="images/order/time.png" height="14" width="14"/>  {{data.backDate}}</p>
+                <p><img src="images/order/address.png" height="14" width="14"/> {{data.returnCity}} {{data.nowReturnStore}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: white;margin-top: 40px">
+        <div class="row" style="padding: 20px;">
+            <table id="table001" style="background-color: #F3FBFE;width: 100%;" ng-if="relName==null"><!--ng-if="relName==null"-->
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro;">
+                    <td style="width: 30%;font-size: 26px ;padding-left: 20px">我的信息</td>
+                    <td style="width: 40%"></td>
+                    <td style="width: 30%"></td>
+                </tr>
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro">
+                    <td style="padding-left: 20px">真实姓名：</td>
+                    <td><!--{{relName}}--><input type="text" style="width: 400px;height:30px" ng-model="realName01" ng-blur="isRealName01()" id="input001"></td>
+                    <td id ='tishi01' style="">真实姓名，方便租车时核对身份</td>
+                </tr>
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro">
+                    <td style="padding-left: 20px">身份证号：</td>
+                    <td><!--{{idCardNum}}--><input type="text" style="width: 400px;height:30px" ng-model="idCard01" ng-blur="isIdCard01()" id="input002"></td>
+                    <td id ='tishi02' style="">如需修改，请致电400-616-6666</td>
+                </tr>
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro">
+                    <td style="padding-left: 20px">邮箱号码：</td>
+                    <td id="telphone001"><!--{{phoneNum}}--><input type="text" style="width: 400px;height: 30px;" ng-model="email01" ng-blur="isEmail01()" id="input003"></td>
+                    <td id ='tishi03' style=" ">下单成功后，提醒信息会发送至手机  </td>
+                </tr>
+                <tr style="height: 60px;">
+                    <td></td>
+                    <td></td>
+                    <td ng-click="wanshan()"><input type="button" style="color:white;border: none;background-color: orange;width: 100px;height: 40px;border-radius: 5px;margin-top: 10px" value="完善信息"></td>
+                </tr>
+            </table>
+            <table id="table002" style="background-color: #F3FBFE;width: 100%" ng-if="relName!=null"><!--ng-if="relName!=null"-->
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro;" >
+                    <td style="width: 30%;font-size: 26px ;padding-left: 20px">我的信息</td>
+                    <td style="width: 40%"></td>
+                    <td style="width: 30%"></td>
+                </tr>
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro">
+                    <td style="padding-left: 20px">真实姓名：</td>
+                    <td>{{relName}}</td>
+                    <td style="">真实姓名，方便租车时核对身份</td>
+                </tr>
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro">
+                    <td style="padding-left: 20px">身份证号：</td>
+                    <td>{{idCardNum}}</td>
+                    <td style="">如需修改，请致电400-616-6666</td>
+                </tr>
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro">
+                    <td style="padding-left: 20px">手机号码：</td>
+                    <td id="telphone">{{phoneNum}}</td>
+                    <td style=" ">下单成功后，提醒信息会发送至手机  </td>
+                </tr>
+               <!-- <tr style="height: 60px;">
+                    <td></td>
+                    <td></td>
+                    <td><input type="button" style="border: none;background-color: orange;width: 100px;height: 40px;border-radius: 5px;margin-top: 10px" value="修改" ui-sref="userInfoFirst.writeInfo"></td>
+                </tr>-->
+            </table>
+        </div>
+        <div class="row" style="margin: 10px;background-color: #FDFCE7;padding: 10px;box-sizing: border-box">
+            <div class="col-lg-1">
+                <img src="images/order/zc_papers_tip.gif" height="36" width="56"/></div>
+            <div class="col-lg-11" style="padding-right: 30px ;box-sizing: border-box">
+                <p>取车时,出示以下证件的原件：本人二代身份证、本人国内有效驾驶证正副本、本人一张信用及可用额度均不低于3000元的国内有效信用卡，所有证件有效期须至少超过当次租期的一个月以上。</p>
+            </div>
+        </div>
+        <div class="row" style="padding: 20px;">
+            <div>
+                <h3 style="color: #31A5FF;border-bottom: solid 3px gainsboro;padding-bottom: 10px">费用明细</h3>
+            </div>
+            <table style="width: 100%;">
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro;">
+                    <td style="width: 30%;padding-left: 20px">车辆租赁及门店服务费</td>
+                    <td style="width: 50%"></td>
+                    <td style="width: 10%">{{newDate.rentPrice}}x{{data.dayNu}}</td>
+                    <td style="width: 10%">¥{{newDate.rentPrice*data.dayNu}}</td>
+                </tr>
+                <tr style="height: 40px;border-bottom: solid 1px gainsboro;">
+                    <td style="width: 30%;padding-left: 20px">基本保险费
+                       <img src="images/order/unknow.png" height="20" width="20" id="example"  rel="popover" data-html="true" data-trigger="hover" data-content="必购产品：如车辆租赁期间出险，保险理赔范围内的损失，客户仅需承担1500元以内的车辆损失部分，不用承担其他损失。
+<br><p></p>承保范围：车辆损失险（1500元以内的损失由客户方承担）；
+<br><p></p>第三者责任险 20万元；车上人员责任险（驾驶员）5万元；全车盗抢险；玻璃单独爆裂险；自燃损失险。
+<br><p></p>本服务按天计费，不满一天按一天算。" />
+                    </td>
+                    <td style="width: 50%"></td>
+                    <td style="width: 10%">{{newDate.insurance}}x{{data.dayNu}}</td>
+                    <td style="width: 10%">¥{{newDate.insurance*data.dayNu}}</td>
+                </tr>
+                <tr id="showOthersCost" style="height: 40px;border-bottom: dashed 1px gainsboro;">
+                    <td style="width: 30%;padding-left: 20px">其他费用 <img id="openCost" src="images/order/up.png" height="20" width="20"/></td>
+                    <td style="width: 50%"></td>
+                    <td style="width: 10%">合计</td>
+                    <td style="width: 10%" ng-bind="'¥'+otherCost"></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <table width="100%" id="othersCost">
+                            <tr style="height: 20px;border-bottom: dashed 1px gainsboro;background-color: #F3FBFF">
+                                <td  style="width: 30%;padding-left: 40px">
+                                    <img id="ischose" src="images/order/select.png" height="14" width="14"/>
+                                    不计免赔服务
+                                    <img id="choseCost" src="images/order/unknow.png" height="20" width="20" data-html="true" rel="popover" data-trigger="hover" data-content="如车辆租赁期间出险，客户无需承担保险理赔范围内的任何损失,以及轮胎损失。<br><p></p>本服务按天计费，超时4小时以上按1天计费，超时4小时以内不另计费。" />
+                                </td>
+                                <td style="width: 50%"></td>
+                                <td style="width: 10%">50x{{data.dayNu}}</td>
+                                <td style="width: 10%">¥ {{data.dayNu*50}}</td>
+                            </tr>
+                            <tr style="height: 20px;border-bottom: solid 1px gainsboro;background-color: #F3FBFF">
+                                <td style="width: 30%;padding-left: 40px">手续费 </td>
+                                <td style="width: 50%"></td>
+                                <td style="width: 10%"></td>
+                                <td style="width: 10%">¥35</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <!--<input type="text" ng-model="otherCost">-->
+        <div class="row" style="padding: 20px;">
+            <div>
+                <h3 style="color: #31A5FF;border-bottom: solid 3px gainsboro;padding-bottom: 10px">发票类型</h3>
+            </div>
+            <div>
+                <input type="radio" name="fapiao" id="fa1" style="margin-left: 30px"><label for="fa1" style="font-weight: 400">不需要发票</label>
+                <input type="radio" name="fapiao"  id="fa2" style="margin-left: 30px"><label for="fa2" style="font-weight: 400">需要发票</label>
+            </div>
+        </div>
+        <div class="row" style="margin: 7px;background-color: #F3FBFF;">
+            <div class="col-lg-7" style="padding-left: 60px;line-height: 60px">
+                <span>订单总价：</span>
+                <span style="font-size: 25px;color: orange">¥{{allprice}}</span>
+            </div>
+            <div class="col-lg-5" style="text-align: right;padding: 0px;box-sizing: border-box">
+                <a id="gopay" style="display: inline-block;width: 200px;height: 60px;background-color: #298EEB;color: white;font-size: 20px;text-align: center;line-height: 60px;text-decoration: none">提交订单</a>
+                <a id="gopay1" style="display: inline-block;width: 200px;height: 60px;background-color: #E57848;color: white;font-size: 20px;text-align: center;line-height: 60px;text-decoration: none">支付全款</a>
+            </div>
+        </div>
+        <div class="row">
+            <div style="border-bottom: solid 2px gainsboro;background-color: #FFFCF5;padding-top: 5px;margin-top: 20px">
+                <h4 style="margin-left: 20px;">退改规则</h4>
+            </div>
+            <div style="padding:20px 40px 20px 40px ">
+                <h5>订单修改或取消：</h5>
+                <p style="text-indent:2em;font-size: 11px">a)取车时间距当前时间≥2个工作小时，请提前致电400 616 6666：取车时间在门店的营业时间内，请提前2小时申请；取车时间在门店营业时间之外，请您尽早致电申请。</p>
+                <p style="text-indent:2em;font-size: 11px"> b)取车时间距当前时间＜2个工作小时，不接受修改。</p>
+                <p style="text-indent:2em;font-size: 11px">（小贴士：如果您修改订单或取消订单重新预订，价格可能会发生变化。）</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" style="margin-top: 50px;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" ng-cloak>
+                        {{detailCarInfo[0].brand}}{{detailCarInfo[0].series}}租车配置信息
+                    </h4>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 car-baseInfo" style="background-color:#ffffff">
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5"><b class="zws" style="height: 10px">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">座 位 数: </span><span ng-cloak>{{detailCarInfo[0].sitNum}}</span>
+                            </div>
+
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="cms" style="height: 10px">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">车 门 数: </span><span ng-cloak>{{detailCarInfo[0].doorNum}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="rllx">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                    class="style-car">燃料类型：</span><span ng-cloak>{{detailCarInfo[0].fuelType}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="bsxlx">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                    class="style-car">变速箱类型：</span><span ng-cloak>{{detailCarInfo[0].gearBoxType}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="pl">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">排　　量：</span><span ng-cloak>{{detailCarInfo[0].output}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="rybh">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                    class="style-car">燃油标号：</span><span ng-cloak>{{detailCarInfo[0].fuelLabel}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="qdfs">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                    class="style-car">驱动方式：</span><span ng-cloak> {{detailCarInfo[0].driveStyle}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="fdjjqms">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                    class="style-car">发动机进气形式：</span><span ng-cloak>{{detailCarInfo[0].engineIn}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="tc">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">天　　窗：</span><span ng-cloak>{{detailCarInfo[0].windNum}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="yxrl">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                    class="style-car">油箱容量：</span><span ng-cloak>{{detailCarInfo[0].fuelCapacity}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="yx">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">音　　箱：</span><span ng-cloak>{{detailCarInfo[0].voiceBoxNum}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="zy">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">座　　椅：</span><span ng-cloak>{{detailCarInfo[0].seat}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="dcld">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                    class="style-car">倒车雷达：</span><span ng-cloak>{{detailCarInfo[0].pdcp}}</span></div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="qn">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">气　　囊：</span><span ng-cloak>{{detailCarInfo[0].airSacNum}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="row abc conInfoHei">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="dvd">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">DVD / CD：</span><span ng-cloak>{{detailCarInfo[0].dvdCd}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="gps">
+                                &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">GPS导航：</span><span ng-cloak>{{detailCarInfo[0].haveGps}}</span>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+    <div class="modal fade" id="myModalError001" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header order-model-top">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title " id="myModalLabelError001">完善信息</h4>
+                </div>
+                <div class="modal-body  " style="padding:30px;">
+                    <div>完善状态</div>
+                    <div style="text-align: center;margin-top: 20px;margin-bottom: 20px;color: red;font-size:18px">
+                        <div>填写信息有误</div><!--<span style="border: 1px solid black">填写信息有误</span>--></div>
+                    <!-- <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">不取消了</button>
+                         <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="cancelOrder()">执意取消</button>
+                     </div>-->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModalFal001" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header order-model-top">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title " id="myModalLabelFal001">完善信息</h4>
+                </div>
+                <div class="modal-body  " style="padding:30px;">
+                    <div>完善状态</div>
+                    <div style="text-align: center;margin-top: 20px;margin-bottom: 20px;color: red;font-size:18px">
+                        <div>更新信息失败</div><!--<span style="border: 1px solid black">填写信息有误</span>--></div>
+                    <!-- <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">不取消了</button>
+                         <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="cancelOrder()">执意取消</button>
+                     </div>-->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,154 @@
+<div>
+    <div class="regist-main">
+        <br>
+        <div class="main-zc">
+            <table>
+                <tr>
+                    <td>
+                        <form id="registForm" name="registForm">
+                        <div class="main-zc-left">
+                            <span class="text">注册新用户</span>
+                            <div class="main-zc-left-input01">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">
+                                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control"id="demo01" name="nickName" ng-model="nick_name" placeholder="请输入您的昵称" ng-pattern="/[\u4e00-\u9fa5]/" required>
+                                    <div class="errText" >
+                                        <div ng-messages="registForm.nickName.$error" ng-messages-multiple ng-if="registForm.nickName.$touched" >
+                                            <div ng-message="required" style="color: #FABE00">昵称不能为空!!!</div>
+                                            <div ng-message="pattern" style="color: #FABE00">昵称由汉字、字母或字符组成</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="main-zc-left-input02" >
+                                <div class="input-group" >
+                                    <span class="input-group-addon" id="basic-addon2">
+                                       <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+                                    </span>
+                                    <input type="text" class="form-control" id="demo02" name="phoneNum" ng-model="phone_num" placeholder="请输入您的手机号"  ng-pattern="/^1[3|4|5|7|8][0-9]{9}$/"  required>
+                                    <div class="errText"  >
+                                        <div ng-messages="registForm.phoneNum.$error" ng-messages-multiple ng-if="registForm.phoneNum.$touched" >
+                                            <div ng-message="required" style="color: #FABE00">手机号不能为空!!!</div>
+                                            <div ng-message="pattern" style="color: #FABE00">手机号码不合法!!!</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="container-input03">
+                                <div class="main-zc-left-input03">
+                                    <div class="input-group">
+                                       <span class="input-group-addon" id="basic-addon3">
+                                          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                       </span>
+                                        <input id="demo03" type="text" class="form-control " placeholder="请输入手机动态码" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div id="button-dtai">获取手机动态码</div>
+                            </div>
+                            <div class="container-input04">
+                                <div class="main-zc-left-input04">
+                                    <div class="input-group">
+                                       <span class="input-group-addon" id="basic-addon4">
+                                          <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                       </span>
+                                       <input type="password" id="demo04" class="form-control " placeholder="建议6-20数字、字母、符号的组合" name="password" ng-model="pass_word" ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/" ng-minlength=6  ng-maxlength=20  required>
+                                        <div class="errText" >
+                                            <div ng-messages="registForm.password.$error" ng-messages-multiple ng-if="registForm.password.$touched" >
+                                                <div ng-message="required" style="color: #FABE00">密码不能为空!!!</div>
+                                                <div ng-message="minlength">密码长度最小为6</div>
+                                                <div ng-message="maxlength">密码长度最大为20</div>
+                                                <div ng-message="pattern" style="color: #FABE00">密码不合法!!!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="container-input04-text">-->
+                                    <!--<div class="ruo" id="weak">弱</div>-->
+                                    <!--<div class="ruo" id="center">中</div>-->
+                                    <!--<div class="ruo" id="strong">强</div>-->
+                                <!--</div>-->
+                            </div>
+                            <div class="main-zc-left-input05">
+                                <div class="input-group">
+                                   <span class="input-group-addon" id="basic-addon5">
+                                       <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                   </span>
+                                    <input id="demo05" type="password" class="form-control " placeholder="请再次输入密码" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="main-zc-left-div06">
+                                <input type="checkbox">&nbsp;我已阅读并同意
+                                <a href="#">《神州租车会员服务条款》</a>
+                            </div>
+                            <input type="submit" value="注册" id="btnRegistrationAjax">
+                        </div>
+                        </form>
+                    </td> <!--左侧注册部分end-->
+                    <td>
+
+                        <div class="main-zc-right">
+                            <span class="title">已有账号？ <a href="#">立即登录 »</a></span>
+                            <div class="youhui">
+                                <div class="div01">如何获得新用户专享劵</div>
+                                <div class="div02">
+                                    <dl>
+                                        <dt>第一步</dt>
+                                        <dd>注册成为会员，加入乐途租车大家庭</dd>
+                                    </dl>
+                                </div>
+                                <div class="div03">
+                                    <dl>
+                                        <dt>第二步</dt>
+                                        <dd><span class="youhui-div03">百元</span>新用户专享劵到账，开启首次租车之旅<span
+                                                class="youhui-div03">（我的乐途>我的资产中查看优惠价)</span>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="table">
+        <table class="tex-table">
+            <tr>
+                <td class="td01">
+                    <img src="images/index-images/banner-bottom-1.png">
+                    <br>
+                    <br>
+                    100+车型
+                </td>
+                <td class="td02">
+                    <img src="images/index-images/banner-bottom-2.png">
+                    <br>
+                    <br>
+                    1000+网点
+                </td>
+                <td class="td03">
+                    <img src="images/index-images/banner-bottom-3.png">
+                    <br>
+                    <br>
+                    100%车险
+                </td>
+                <td class="td04">
+                    <img src="images/index-images/banner-bottom-4.png">
+                    <br>
+                    <br>
+                    无限里程
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

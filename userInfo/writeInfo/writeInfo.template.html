@@ -1,0 +1,176 @@
+<div class="ch1-change-password">
+
+
+
+    <div class="ch1-main-title">
+        我的信息
+
+    </div>
+    <form action="">
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left" >
+            昵称
+
+        </div>
+
+        <input class="ch1-input02" value="" ng-model="myNickName" ng-blur="isNickName()">
+
+        </input>
+        <div class="ch1-main-top-right1">
+
+        </div>
+
+
+    </div>
+
+
+    <!--头像  Avatar-->
+
+
+     <!--   <div class="ch1-Avatar">
+
+            <div class="ch1-Avatar-left">
+                头像
+            </div>
+
+
+            <div class="ch1-Avatar-frame">
+                <div class="ch1-change-content">
+
+                </div>
+
+            </div>
+
+        </div>-->
+
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            姓名
+
+        </div>
+        <input class="ch1-input02" ng-model="myRealName" ng-blur="isRealName()"></input>
+        <div class="ch1-main-top-right1">
+            真实姓名，方便租车时核对身份
+
+
+        </div>
+
+    </div>
+
+
+   <!-- <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            驾驶证
+
+        </div>
+
+        <input class="ch1-input02" value="" ng-model="myLicense" ng-blur="isLicense()">
+
+        </input>
+        <div class="ch1-main-top-right1">
+            如需修改，请致电400-616-6666
+
+
+        </div>
+
+    </div>-->
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            身份证
+
+        </div>
+        <input class="ch1-input02" ng-model="myIdCard" ng-blur="isIdCard()">  </input>
+
+
+        <div class="ch1-main-top-right1">
+            如需修改，请致电400-616-6666
+        </div>
+
+    </div>
+
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left">
+            手机号码
+
+        </div>
+
+        <input class="ch1-input02"  ng-model="myPhoneNum"></input>
+
+        <div class="ch1-main-top-right">
+            <span class="ch1-change-phone">修改</span>
+            <apan class="ch1-change-phone1">取消修改</apan>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="ch1-change-ph-content">
+        <div class="ch1-change-ph-content-text">
+            手机号码
+        </div>
+        <div class="ch1-change-ph-content-input">
+            <div>
+                <input type="text" class="ch1-change-ph-content-input1" placeholder="原手机号码">
+
+            </div>
+            <div>
+                <input type="text" class="ch1-change-ph-content-input2" placeholder="新手机号码">
+
+            </div>
+            <div>
+                <input type="text" class="ch1-change-ph-content-input3" placeholder="手机动态码">
+                <div class="ch1-change-ph-content-dynamic">
+                    获取手机动态码
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="ch1-main-top">
+        <div class="ch1-main-top-left"  >
+            电子邮箱
+
+        </div>
+
+        <input class="ch1-input02" value="" ng-blur="isEmail()" ng-model="myEmail"></input>
+        <div class="ch1-main-top-right1">
+            如需修改，请致电400-616-6666
+        </div>
+
+
+    </div>
+
+
+
+    <div class="ch1-div-submit">
+        <div class="ch1-submit" ng-click="saveMyInfo($event)">保存</div>
+
+    </div>
+    </form>
+
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document" style="width: 420px;top: 20%;left:0">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"  data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" style="color: black"></h4>
+                </div>
+
+                <button type="button" class="selectTimeBtn" data-dismiss="modal">确认</button>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+</div>

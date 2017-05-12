@@ -1,0 +1,29 @@
+
+.crt-middle-div{
+    width: 100%;
+    /*background-color: red;*/
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.order-model-top{
+    text-align: center;
+    background-color: #eee6cd;
+}
+.order-model-middle{
+    margin: auto;
+    width:80%
+
+}
+.order-model-middle table{
+    width:100%
+
+}
+.order-model-middle table td{
+    width:33.3%;
+    line-height: 1.5em;
+
+}
+

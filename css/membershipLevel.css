@@ -1,0 +1,255 @@
+body{
+background-color: #F2F3F5;
+}
+.le-container{
+    width: 920px;
+    background-color: white;
+    padding: 30px;
+}
+
+.le-title-left{
+    display: inline-block;
+    font-size: 1.2em;
+    border-right: solid 1px #E9EBEE;
+    padding-right: 15px;
+    color: #60606C;
+}
+.le-title-right{
+    display: inline-block;
+    margin-left: 15px;
+    color: #93939E;
+    font-size: 0.8em;
+}
+.le-container-image-top{
+    width: 100%;
+    border-bottom: solid 1px #E5E5E5;
+    margin-top: 30px;
+}
+
+.le-container-image-top a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+}
+.le-container-image-top-left1{
+    background-color: #F8F8FA;
+    color:#93939E ;
+}
+.le-container-image-top-left1:hover{
+     cursor: pointer;
+}
+.le-container-image-top-right1{
+    background-color:#FABE00 ;
+    color: white;
+    margin-left: -5px;
+}
+.le-container-image-top-right1:hover{
+    cursor: pointer;
+}
+.le-container-image-top-left{
+    background-color:#FABE00 ;
+    color: white;
+}
+.le-container-image-top-left{
+    cursor: pointer;
+}
+.le-container-image-top-right{
+    background-color: #F8F8FA;
+    color: #93939E;
+    margin-left: -5px;
+}
+.le-container-image-top-right:hover{
+       cursor: pointer;
+}
+.le-container-table td{
+    width: 16%;
+    padding: 20px;
+    border: solid 1px #E9EBEE;
+    color: #60606C;
+
+}
+.le-container-table {
+    border-collapse: collapse;
+    border: solid 1px #E9EBEE;
+
+}
+.le-container-table td:first-child{
+    color: #93939E;
+
+}
+
+.le-container-table-tr01 {
+    background-color: #F8F8FA;
+    color: #93939E;
+
+}
+
+.le-container-table02{
+    width: 80%;
+    border: solid 1px #E9EBEE;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #AC93B5;
+
+
+}
+.le-container-table02 td{
+    width: 20%;
+    text-align: center;
+    border: solid 1px #E9EBEE;
+}
+.le-container-table02-tr2 td{
+    padding: 20px;
+
+}
+.le-container-table02-tr1 td{
+    padding: 10px;
+    background-color: #F8F8FA;
+
+}
+
+
+
+.le-container-text h3,h4,h5{
+    color: #60606C;
+}
+.le-container-text p{
+    color: #AE93AA;
+}
+.le-container-text a{
+        text-decoration: none;
+    color: #98B0FF;
+}
+.le-container-text a:hover{
+    text-decoration: underline;
+}
+
+
+
+.le-container-text dd{
+    color: #93939E;
+    line-height: 25px;
+}
+.le-container-text dt{
+    color: #60606C;
+    line-height: 40px;
+
+}
+
+.le-container-rotation{
+    background-image: url('../images/personal-img/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 270px;
+    /*background-color: red;*/
+
+
+}
+
+.le-container-rotation-img{
+    width: 200px;
+    height: 125px;
+    /*background-color: red;*/
+    margin: auto;
+    margin-top: 65px;
+    background-image: url('../images/personal-img/lever.png');
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
+
+.le-container-rotation-box{
+    width: 45px;
+    height: 30px;
+    background-color: #FAF4E1;
+    border: solid 1px #fa771f;
+    border-radius: 5px;
+    color: #FE866F;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+.le-container-rotation-table{
+    width: 95%;
+    color: #93939E;
+    /*background-color: red;*/
+}
+.le-container-rotation-table td{
+    width: 25%;
+    /*background-color: red;*/
+}
+.le-container-rotation-table td:last-child{
+    width: 10%;
+
+}
+
+
+.le-container-text{
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+.le-container-left{
+    width: 920px;
+    background-color: white;
+    height: 720px;
+    padding: 30px;
+    display: none;
+}
+
+
+
+
+.le-container-content{
+    width: 100%;
+    height: 420px;
+    margin-top: 20px;
+    background-color: #F8F8FA;
+    text-align: center;
+}
+
+.le-container-image03{
+    margin-top: 65px;
+
+}
+
+.le-container-content-text{
+    height: 80px;
+    line-height: 80px;
+    color: #606082;
+}
+
+.le-container-content a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    font-size: 0.8em;
+    line-height: 30px;
+    color: white;
+    background-color:#F3B900;
+}
+.le-container-content a:hover{
+    background-color:#FF8650;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,437 @@
+<div style="width: 100%;background-color: #ffffff">
+
+    <div class="row" style="width: 100%;">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="inner-middle">
+                <!--<11111car-show-page></car-show-page>-->
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-xs-4 col-sm-6 col-md-7 col-lg-7 title-car">
+                        <h4>
+                            <em ng-cloak>{{detailCarInfo[0].brand}}{{detailCarInfo[0].series}}/{{detailCarInfo[0].carSize}}/{{detailCarInfo[0].output}}自动</em>
+                        </h4>
+                        <p ng-cloak>神州租车>短租自驾>新能源/{{detailCarInfo[0].type}}</p>
+                    </div><!--end of title-->
+                    <div class="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+
+                    <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3 extra-list">
+                        <ul>
+                            <li><img class="collIcon" src="images/detailed-img/coll-bef.png" alt=""
+                                     ng-click="changeColl()"><span>收藏</span></li>
+                            <li><img src="images/detailed-img/share.png" alt=""><span>分享</span></li>
+                            <li>评分 : 5分</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--end of row-->
+
+                <!--<22222car-show-img-page></car-show-img-page>-->
+                <div class="row" style="width: 100%;">
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 carousel-all" style="padding: 0px">
+                        <div class="row">
+                            <div id="bigPic" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 carousel"
+                                 style="padding: 0px">
+                                <img src="images/detailed-img/DSC_0014-660x441.jpg" alt="">
+                            </div>
+
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <div id="showPicOne" class="row carousel">
+                                    <div id="000" class="show col-xs-10 col-sm-10 col-md-10 col-lg-10 "
+                                         style="padding: 0px;">
+                                        <div class="cover"></div>
+                                        <div class="previous"></div>
+                                        <!--<img src="img/gallery/DSC_0008-660x441.jpg" alt="">-->
+                                    </div>
+                                    <div id="001" class="show col-xs-10 col-sm-10 col-md-10 col-lg-10 "
+                                         style="padding: 0px;">
+                                        <div class="cover"></div>
+                                        <!-- <img src="img/gallery/DSC_0014-660x441.jpg" alt="">-->
+                                    </div>
+                                    <div id="002" class="show col-xs-10 col-sm-10 col-md-10 col-lg-10 "
+                                         style="padding: 0px">
+                                        <div class="cover"></div>
+                                        <!--<img src="img/gallery/DSC_0061-660x441.jpg" alt="">-->
+                                    </div>
+                                    <div id="003" class="show col-xs-10 col-sm-10 col-md-10 col-lg-10 "
+                                         style="padding: 0px">
+                                        <div class="cover"></div>
+                                        <!--<img src="img/gallery/DSC_0091-660x441.jpg" alt="">-->
+                                    </div>
+                                    <div id="004" class="show col-xs-10 col-sm-10 col-md-10 col-lg-10 "
+                                         style="padding: 0px">
+                                        <div class="cover"></div>
+                                        <!-- <img src="img/gallery/DSC_0161-660x441.jpg" alt="">-->
+                                    </div>
+                                    <div id="005" class="show col-xs-10 col-sm-10 col-md-10 col-lg-10 "
+                                         style="padding: 0px">
+                                        <div class="cover"></div>
+                                        <div class="next"></div>
+                                        <!-- <img src="img/gallery/DSC_0222-660x441.jpg" alt="">-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 introduce">
+                        <div class="row">
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                <div class="payInstru">
+                                    <div class="payInstru-top">
+                                        <h3>{{'￥'+detailCarInfo[0].rentPrice}}</h3>
+                                        <span>每天</span>
+                                    </div>
+                                    <div class="payInstru-mid">
+                                        <div class="payInstru-mid-text1">
+                                            <span>{{'车辆租金('+dayNu+')'}}</span>
+                                            <span2>{{detailCarInfo[0].rentPrice*dayNu}}</span2>
+                                        </div>
+                                        <div class="payInstru-mid-text1">
+                                            <span>{{'超级全车驾乘险('+dayNu+')'}}</span>
+                                            <span2>{{insurance}}x{{dayNu}}</span2>
+                                        </div>
+                                    </div>
+                                    <div class="payInstru-bot">
+                                        <div class="payInstru-mid-text1">
+                                            <span>合计费用</span>
+                                            <span2>{{total}}</span2>
+                                        </div>
+                                        <div class="payInstru-mid-text1 pay-text">
+                                            <span>在线支付</span>
+                                            <span2>{{total}}</span2>
+                                        </div>
+                                    </div>
+                                    <div class="take-back-time">
+                                       <div class="time-box">
+                                       <span class="box-circle">
+                                       <em>取</em>
+                                       </span>
+                                            <div class="rent-time-where">
+                                                <strong>{{rentDate}}</strong>&nbsp;&nbsp;
+                                                <a id="update"   data-toggle="modal" data-target="#myModal">修改</a>
+                                                <br>
+                                                <p ng-cloak>{{nowStore}}</p>
+                                            </div>
+                                        </div>
+                                     <div class="time-box">
+                                         <span class="box-circle">
+                                         <em style="color:#F65E73">还</em>
+                                         </span>
+                                         <div class="rent-time-where">
+                                             <strong>{{backDate}}</strong>&nbsp;&nbsp;
+                                             <a id="update1"  data-toggle="modal" data-target="#myModal">修改</a>
+                                             <br>
+                                             <p ng-cloak>{{nowReturnStore}}</p>
+                                         </div>
+                                        </div>
+                                    </div>
+                                    <!--<a ng-click="bookImme()" class="detail-now-book" data-toggle="modal" data-target=".bs-example-modal-sm">立即预定</a>-->
+                                    <a ng-click="bookImme()" class="detail-now-book">立即预定</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!--Small modal点击修改弹出修改时间-->
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="gridSystemModalLabel">信息修改</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-2 ">取车时间</div>
+                                    <div class="col-md-4">
+                                        <input ng-model="rentDate"  id="d4318" class="Wdate shortrent-select1" type="text" onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4319\')||\'2020-10-01\'}',isShowClear:false,readOnly:true,minDate:'%y-%M-{%d}', dateFmt:'yyyy-MM-dd HH:00',skin:'twoer',})"/>
+                                    </div>
+                                    <div class="col-md-2">还车时间</div>
+                                    <div class="col-md-4">
+                                        <input ng-model="backDate" id="d4319" class="Wdate shortrent-select1" type="text" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'d4318\')}',maxDate:'2020-10-01',isShowClear:false,readOnly:true, dateFmt:'yyyy-MM-dd HH:00',skin:'twoer',})"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <p>取车地点</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="city" id="city" class="shortrent-select1 "  ng-model="cityName">
+                                            <option ng-value="a.city" ng-repeat="a in rentCarCity1" ng-bind="a.city"></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <p>取车店铺</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="rentStorm" id="rentStorm" class="shortrent-select1 " ng-model="rentStormName"><!--ng-model="rentStormName"-->
+                                            <option ng-value="v.store" ng-repeat=" v in rentStorm" ng-bind="v.store"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <p>还车地点</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="returnCity" id="returnCity" class="shortrent-select1 "  ng-model="cityName01">
+                                            <option ng-value="c.city" ng-repeat="c in returnCarCity1" ng-bind="c.city"></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <p>还车店铺</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="returnStorm" id="returnStorm" class="shortrent-select1 "  ng-model="returnStormName" ><!--ng-model="returnStormName"-->
+                                            <option ng-value="value.store"  ng-repeat="value in returnStorm" ng-bind="value.store" ></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button id="checkUpdate" data-dismiss="modal" type="button" class="btn btn-primary">确定</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+
+
+
+                <!--<33333car-show-info-page></car-show-info-page>-->
+                <div>
+                    <div class="row" style="margin-top: 25px">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 car-baseInfo" style="background-color:#ffffff">
+                            <h3 ng-cloak>{{detailCarInfo[0].brand}}{{detailCarInfo[0].series}}租车基本信息</h3>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="pp">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">品 牌: </span><span ng-cloak>{{detailCarInfo[0].brand}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="zx">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">车 系: </span><span ng-cloak>{{detailCarInfo[0].series}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="ndk">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">年 代 款：</span><span ng-cloak>{{detailCarInfo[0].yearType}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="pzk">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">配 置 款：</span><span ng-cloak>{{detailCarInfo[0].configType}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 interval-car-show"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 car-baseInfo" style="background-color:#ffffff">
+                            <h3 ng-cloak>{{detailCarInfo[0].brand}}{{detailCarInfo[0].series}}租车配置信息</h3>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="zws">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">座 位 数: </span><span ng-cloak>{{detailCarInfo[0].sitNum}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="cms">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">车 门 数: </span><span ng-cloak>{{detailCarInfo[0].doorNum}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="rllx">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                        class="style-car">燃料类型：</span><span ng-cloak>{{detailCarInfo[0].fuelType}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="bsxlx">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                        class="style-car">变速箱类型：</span><span ng-cloak>{{detailCarInfo[0].gearBoxType}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="pl">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">排　　量：</span><span ng-cloak>{{detailCarInfo[0].output}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="rybh">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                        class="style-car">燃油标号：</span><span ng-cloak>{{detailCarInfo[0].fuelLabel}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="qdfs">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                        class="style-car">驱动方式：</span><span ng-cloak> {{detailCarInfo[0].driveStyle}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="fdjjqms">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                        class="style-car">发动机进气形式：</span><span ng-cloak>{{detailCarInfo[0].engineIn}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="tc">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">天　　窗：</span><span ng-cloak>{{detailCarInfo[0].windNum}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="yxrl">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                        class="style-car">油箱容量：</span><span ng-cloak>{{detailCarInfo[0].fuelCapacity}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="yx">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">音　　箱：</span><span ng-cloak>{{detailCarInfo[0].voiceBoxNum}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="zy">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">座　　椅：</span><span ng-cloak>{{detailCarInfo[0].seat}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="dcld">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span
+                                        class="style-car">倒车雷达：</span><span ng-cloak>{{detailCarInfo[0].pdcp}}</span></div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="qn">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">气　　囊：</span><span ng-cloak>{{detailCarInfo[0].airSacNum}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                            <div class="row abc">
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="dvd">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">DVD / CD：</span><span ng-cloak>{{detailCarInfo[0].dvdCd}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><b class="gps">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</b><span class="style-car">GPS导航：</span><span ng-cloak>{{detailCarInfo[0].haveGps}}</span>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--<44444comm-car-page></comm-car-page>-->
+                <div>
+                    <div class="row" style="margin-top: 30px">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 commentNav" style="background-color:#ffffff">
+                            <h3>用户评论</h3>
+                        </div><!--end of row-first-->
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 carCommGrade" >
+                            <span class="x_textscore" ng-cloak>{{carIdAvgGrade}}</span>
+                            <em class="f_24">/5分</em>
+                            <div class="gradeStar-bg">
+                                <div id="gradeStar-over"></div>
+                            </div>
+                            <!--<img src="images/detailed-img/getscore.png" class="comm-car-score">-->
+                            <!--<img src="images/detailed-img/getscoreTwo.png" class="comm-car-score-two">-->
+                        </div><!--end of row-first-->
+                    </div>
+                    <div class="row ">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 interval-comm"></div>
+                    </div>
+
+                    <div class="row" ng-repeat="c in partNew">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="background-color:#ffffff">
+                            <div class="comm-list">
+                                <div class="row" style="border-top: 1px solid #ddd">
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <img src="http://127.0.0.1:3000/images/userinfo/{{c.userPhoto}}"
+                                             class="head_img img-circle">
+                                    </div><!--head pictures-->
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 " style="margin-top: 20px;">
+                                        <h6>
+                                            <span class="col_pink" ng-bind="c.nickName"></span>
+                                            借车时间：
+                                            <i ng-bind="c.rentTime"></i>
+                                            <i class="col_black" ng-bind="c.store"></i>
+                                            <i class="col_black" ng-bind=""></i>
+                                        </h6>
+                                        <p ng-bind="c.comContent"></p>
+
+                                        <div class="gallery row" style="width:60%;">
+                                            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"><a
+                                                    ng-href="images/detailed-img/DSC_0014-660x441.jpg"><img
+                                                    src="images/detailed-img/DSC_0014-660x441.jpg"/></a></div>
+                                            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"><a
+                                                    ng-href="images/detailed-img/DSC_0019-660x441.jpg"><img
+                                                    src="images/detailed-img/DSC_0019-660x441.jpg"/></a></div>
+                                            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"><a
+                                                    ng-href="images/detailed-img/DSC_0061-660x441.jpg"><img
+                                                    src="images/detailed-img/DSC_0061-660x441.jpg"/></a></div>
+                                            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"><a
+                                                    ng-href="images/detailed-img/DSC_0063-441x660.jpg"><img
+                                                    src="images/detailed-img/DSC_0063-441x660.jpg"/></a></div>
+                                            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"><a
+                                                    ng-href="images/detailed-img/DSC_0090-660x441.jpg"><img
+                                                    src="images/detailed-img/DSC_0090-660x441.jpg"/></a></div>
+                                            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"><a
+                                                    ng-href="images/detailed-img/DSC_0091-660x441.jpg"><img
+                                                    src="images/detailed-img/DSC_0091-660x441.jpg"/></a></div>
+                                        </div>
+                                    </div><!--comment main area-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--end of list01-->
+
+
+                    </div><!--评论的列表 end of comm-list-->
+
+                    <div class="row noCommentText">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 "></div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                            <img src="images/detailed-img/noTextPho.png" alt="">
+                        </div>
+                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                            <h3>该车还未被评价!</h3>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="background-color:#ffffff">
+                            <div aria-label="Page navigation" style="text-align: right">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="javascript:void(0);" aria-label="Previous" id="backPage"
+                                           ng-click="turnPage(page_now-1)">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+
+                                    <li ng-repeat="c in part_count">
+                                        <a href="javascript:void(0);" ng-bind="c" ng-click="turnPage(c)"></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:void(0);" aria-label="Next" id="goPage"
+                                           ng-click="turnPage(page_now+1)">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

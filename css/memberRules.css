@@ -1,0 +1,60 @@
+body{
+    background-color: #F2F3F5;
+    color: #60606C;
+
+}
+
+.msr-container{
+    width: 865px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: white;
+}
+
+.mrs-title{
+    height: 80px;
+    border: solid 1px #E9EBEE;
+    font-size: 1.3em;
+    color: #60606C;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
+    line-height: 80px;
+}
+
+
+.mrs-main{
+    margin-top: 35px;
+}
+.mrs-table1{
+    border: solid 1px black;
+    border-collapse: collapse;
+    background-color: #F8F8FA;
+}
+.mrs-table1 td{
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: solid 1px black;
+    width: 16%;
+}
+
+.mrs-table2{
+    width: 100%;
+    height: 120px;
+    border: solid 1px #E9EBEE;
+    border-collapse: collapse;
+}
+.mrs-table2 td{
+    width: 16%;
+    padding: 20px;
+    border: solid 1px #E9EBEE;
+
+
+}
+.mrs-table2-tr td{
+    background-color: #559ED7;
+}
+
+

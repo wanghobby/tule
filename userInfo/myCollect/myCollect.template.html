@@ -1,0 +1,141 @@
+<div>
+    <div class="mc-container-body">
+
+        <div class="mc-container-top">
+
+            <div class="mc-container-date">
+                <span class="mc-container-date-text">我的收藏</span>
+
+            </div>
+
+            <div class="mc-container-content">
+                <table>
+                    <tr>
+                        <td style="color: white">全部</td>
+                    </tr>
+                </table>
+            </div>
+
+            <table class="mc-container-table01">
+                <tr>
+                    <td>收藏信息</td>
+                    <td class="mc-container-table01-td02">价格</td>
+                    <td class="mc-container-table01-td03">是否租车</td>
+                    <td class="mc-container-table01-td04">取消收藏</td>
+                </tr>
+            </table>
+
+
+
+            <div id="true">
+            <div class="mc-container-car1" ng-repeat="x in partNew">
+                <table class="mc-container-table02 ">
+                    <tr>
+                        <td class="mc-container-table02-td01">
+
+
+                            <img  ng-click="turnImageCom01(x.carId,x.eachCarId)" src="images/personal-img/car.jpg" height="100" width="165"
+                                 style="vertical-align: middle"/>
+                            <div class="mc-container-table01-td02-div">
+                                {{x.carName}}<br>
+                                <span style="font-size: 0.8em; color: #60606C"><span>{{x.carSize}}</span>|<span>{{x.output}}</span>|<span>{{x.gearBoxType}}</span>|乘坐{{x.sitNum}}人<br>
+                                <span>{{x.collTime}}</span>
+                       </span>
+                            </div>
+                        </td>
+                        <td class="mc-container-table02-td02">
+                        <span class="mc-container-table01-td02-div-left">
+                            门店支付
+                        </span>
+
+                            <span class="mc-container-table01-td02-div-right">
+                        <span class="mc-container-table01-td02-div-symbol">  ￥</span>
+
+                        <span class="mc-container-table01-td02-div-price">   {{x.rentPrice}}</span>
+                           /日均
+
+                        </span>
+
+                        <td class="mc-container-table02-td03">
+                            <span class="mc-container-table02-td03-rent">租车 </span>
+                        </td>
+
+                        <td class="mc-container-table02-td04" >
+                        <span class="mc-container-table02-delete1">
+                                <button class="btn " data-toggle="modal" data-target="#mct_myModal" ng-click="delete001(x.uId,x.carId,x.eachCarId)">删除</button>
+
+                                <!--<button class="btn" data-toggle="modal" data-target="#mct_myModal">删除</button>-->
+
+                        </span>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+            </div>
+
+            <div class="row" id="showPage" style=" display:none; ">
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="background-color:#ffffff">
+                    <div aria-label="Page navigation" style="text-align: right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="javascript:void(0);" aria-label="Previous" id="backPage"
+                                   ng-click="turnPage(page_now-1)">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                            <li ng-repeat="c in part_count">
+                                <a href="javascript:void(0);" ng-bind="c" ng-click="turnPage(c)"></a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);" aria-label="Next" id="goPage"
+                                   ng-click="turnPage(page_now+1)">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+             <div class="row" id="false" style="display: none">
+                 <div class="esd-container-top">
+                     <div class="esd-container-content-empty">
+                         <img src="images/inforTotal/no-collection.png" height="120" width="120" class="esd-container-image-empty"/>
+                         <div class="esd-container-content-text-empty">
+                             你还没有收藏喔，亲
+                         </div>
+                         <a href="#">立即租车</a>
+                     </div>
+                 </div>
+             </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="mct_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div >
+                    <h4 class="modal-title mct-modal-test" id="myModalLabel" style="line-height: 60px;margin-left: 30px">是否删除:</h4>
+
+                    <div class="mct-modal-choose" style="text-align: center;margin-bottom: 20px">
+                        <button type="button" class="btn  mct-modal-delete" data-dismiss="modal" ng-click="delete()" style="margin-right: 60px;width: 90px;background-color: red;color: white">删 除</button>
+                        <button ng-click="mctCancel()" type="button" class="btn mct-modal-disagree">取消删除</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+

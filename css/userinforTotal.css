@@ -1,0 +1,39 @@
+.userinfo-top{
+    background-image:url(../images/inforTotal/1kjasd.png);
+    background-position:center bottom;
+    height: 200px;
+}
+
+
+
+.userinfo-frame{
+    /*border: solid 5px rgba(255,255,255,0.51);*/
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+.userinfo-frame:hover{
+    /*border-color: #00b3ee ;*/
+    /*box-shadow: 0 0 5px red ;*/
+
+}
+
+
+.urt-title:hover{
+    background-color: #FFF8E8;
+    color: #FABE00 ;
+    cursor: pointer;
+}
+
+.urt-title{
+    color: #93939E ;
+}
+
+.utr-add-color{
+    background-color: #FFF8E8 ;
+    color: #FABE00 !important;
+}
+
+

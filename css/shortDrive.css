@@ -1,0 +1,290 @@
+.sd-container-body {
+    background-color: #F2F3F5;
+}
+
+.sd-container-top {
+    width: 920px;
+    background-color: white;
+    padding: 30px;
+}
+
+.sd-container-date {
+    font-size: 0.9em;
+    height: 40px;
+
+}
+
+.sd-container-date-text {
+    font-size: 1.4em;
+    color: #60606C;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.sd-container-date01 {
+    width: 132px;
+    margin-left: 40%;
+
+}
+
+.sd-container-date02 {
+    width: 132px;
+    margin-left: 5%;
+
+}
+
+.sd-container-date a {
+    width: 80px;
+    height: 30px;
+    border: solid 1px #A9A9A9;
+    text-align: center;
+    line-height: 30px;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.8em;
+    text-decoration: none;
+    color: #93939E;
+    margin-top: 5px;
+
+}
+
+.sd-container-date-input:hover {
+    background-color: #F3B900;
+
+}
+
+.sd-container-content {
+    width: 100%;
+    border-bottom: solid 1px #E9EBEE;
+    margin-top: 25px;
+}
+
+.sd-container-content table {
+    width: 80%;
+    border: solid 1px #E9EBEE;
+    border-collapse: collapse;
+    border-bottom: none;
+    color: #AC93A9;
+    cursor: pointer;
+
+}
+
+.sd-container-content table td {
+    border: solid 1px #E9EBEE;
+    width: 95px;
+    height: 35px;
+    text-align: center;
+    background-color: #F8F8FA;
+    border-bottom: none;
+}
+
+.sd-container-content table td:first-child {
+    background-color: #FABE00;
+    color: white;
+
+}
+
+.sd-container-content td:hover {
+    background-color: #FABE00;
+    color: white;
+
+}
+
+.sd-container-table01 {
+    width: 100%;
+    height: 30px;
+    background-color: #F8F8FA;
+    margin-top: 15px;
+    color: #93939E;
+}
+
+.sd-container-table01 td:first-child {
+    width: 45%;
+    padding-left: 10px;
+
+}
+
+.sd-container-table01-td02 {
+    width: 32%;
+    padding-left: 10px;
+
+}
+
+.sd-container-table01-td03 {
+    width: 11%;
+    text-align: center;
+}
+
+.sd-container-table01-td03 {
+    text-align: center;
+}
+
+.sd-container-car {
+    width: 100%;
+    border-bottom: solid 1px #E9EBEE;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.sd-container-table02 {
+    width: 100%;
+    height: 100px;
+    border-collapse: collapse;
+}
+
+.sd-container-table02-td01 {
+    width: 45%;
+    border-right: solid 1px #E9EBEE;
+
+}
+
+.sd-container-table01-td02-div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sd-container-table02-td02 {
+    width: 32%;
+    border-right: solid 1px #E9EBEE;
+    padding-left: 20px;
+
+}
+
+.sd-container-date02-div {
+    box-shadow: 0 0 15px #888888;
+    margin-top: 10px;
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.sd-container-date02-div:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #E9EBEE;
+    position: absolute;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.sd-container-date02-popover {
+    width: 100%;
+    margin: auto;
+    background-color: #E9EBEE;
+    line-height: 40px;
+
+}
+
+.sd-container-date02-popover td {
+    padding-left: 20px;
+    width: 20%;
+}
+
+.sd-container-date02-popover2 {
+    width: 100%;
+    margin: auto;
+    background-color: white;
+
+}
+
+.sd-container-date02-popover2 td {
+    height: 60px;
+    padding-left: 20px;
+    font-size: 0.8em;
+    width: 20%;
+    color: #D3AEA1;
+
+}
+
+.sd-container-date02-order {
+    color: #6AC1FF;
+    margin-left: 23px;
+    cursor: pointer;
+}
+
+.sd-container-table02-td03 {
+    width: 11%;
+    text-align: center;
+    border-right: solid 1px #E9EBEE;
+
+}
+
+.sd-container-table02-td04 {
+    text-align: center;
+    color: #93939E;
+}
+
+.sd-container-table02-td04 a {
+    text-align: center;
+    color: #6AB0FF;
+    text-decoration: none;
+}
+
+.sd-container-table02-td04 a:hover {
+    text-decoration: underline;
+    color: #6AB0FF;
+}
+
+.sd-container-navigation {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.sd-container-middle {
+    width: 920px;
+    background-color: white;
+    margin-top: 10px;
+    height: 265px;
+}
+
+.sd-container-middle-top {
+    width: 100%;
+    border-bottom: solid 1px #E9EBEE;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+
+}
+
+[class^='sd-container-middle-div'] {
+    width: 200px;
+    height: 80px;
+    margin: 20px 0 0 20px;
+    background-color: #F8F8FA;
+    display: inline-block;
+    padding: 10px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    font-size: 0.8em;
+    color: #93939e;
+}
+
+.sd-container-bottom {
+    width: 920px;
+    height: 120px;
+    margin-top: 10px;
+    background-color: white;
+
+}
+
+.sd-container-bottom-top {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    background-color: #FFFCF5;
+}
+
+.sd-container-bottom-text {
+    color: #93939E;
+    line-height: 25px;
+    height: 130px;
+    background-color: white;
+    font-size: 0.8em;
+    padding: 20px;
+}

@@ -1,0 +1,14 @@
+.prosonal-comment-star ul{
+    display: inline-block;
+
+    width: 60%;
+    height: 100%;
+    padding: 0px;
+}
+.prosonal-comment-star li{
+
+    display: inline-block;
+    width: 17%;
+    margin-right: 0px;
+    text-align: center;
+}
